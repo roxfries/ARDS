@@ -79,28 +79,15 @@ def checkReport(report):
 	#############
 	
 	if any(word in rad_report for word in rule1):
-     		ARDS = ARDS + 1
-     		print word
-     	#parse sentences here
-		else:
-     		print "no infiltrate"
+     		infiltrate = 1
+     		#parse sentences here
      		#kill line
 		if any(word in rad_report for word in rule2):
-    		ARDS = ARDS + 1
-    		print word
-		else:
-    		print "not bilateral"
+    		bi_or_uni = 1
 		if any(word in rad_report for word in rule3):
-   			ARDS = ARDS + 1
-    		print word
-		else:
-    		print "not new"
+   			new_infiltrate = 1
 		if any(word in rad_report for word in rule4):
-    		ARDS = ARDS + 1
-    		print word
-		else:
-   			print "stable or improving infiltrate"
-   	
+    		worsening = 1
 
    	return ards_yn, infiltrate, worsening, new_infiltrate, bi_or_uni
 	
